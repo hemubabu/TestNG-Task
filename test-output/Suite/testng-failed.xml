@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="password" value="Hemu3123*"/>
+  <parameter name="mobilenumber" value="8072861025"/>
+  <parameter name="emailid" value="hemanthfafu1998@gmail.com"/>
+  <parameter name="Name" value="Hemanthbabu"/>
+  <test name="Test">
+    <parameter name="password" value="Hemu3123*"/>
+    <parameter name="mobilenumber" value="8072861025"/>
+    <parameter name="emailid" value="hemanthfafu1998@gmail.com"/>
+    <parameter name="Name" value="Hemanthbabu"/>
+    <groups>
+      <run>
+        <include name="sanity"/>
+        <exclude name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.testngtask.NaukriTask"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test1">
+    <classes>
+      <class name="com.testngtask.FacebookTask"/>
+    </classes>
+  </test> <!-- Test1 -->
+  <test parallel="tests" name="Test(failed)">
+    <parameter name="password" value="Hemu3123*"/>
+    <parameter name="mobilenumber" value="8072861025"/>
+    <parameter name="emailid" value="hemanthfafu1998@gmail.com"/>
+    <parameter name="Name" value="Hemanthbabu"/>
+    <groups>
+      <run>
+        <include name="sanity"/>
+        <exclude name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.testngtask.NaukriTask">
+        <methods>
+          <include name="launch"/>
+          <include name="afterTest"/>
+          <include name="quitBrowser"/>
+          <include name="user_clicks_the_registerbutton"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.testngtask.NaukriTask -->
+      <class name="com.testngtask.FacebookTask">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="quitBrowser"/>
+          <include name="launch"/>
+        </methods>
+      </class> <!-- com.testngtask.FacebookTask -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
